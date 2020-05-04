@@ -46,7 +46,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - uses: ./.github/actions/action-regex-match-ts
+      - uses: actions-ecosystem/action-regex-match@v2
         id: regex-match
         with:
           text: ${{ github.event.comment.body }}
