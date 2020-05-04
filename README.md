@@ -1,6 +1,6 @@
 # Action Regex Match
 
-[![actions-workflow-lint][actions-workflow-lint-badge]][actions-workflow-lint]
+[![actions-workflow-test][actions-workflow-test-badge]][actions-workflow-test]
 [![release][release-badge]][release]
 [![license][license-badge]][license]
 
@@ -76,8 +76,8 @@ Action Regex Match is released under the [Apache License 2.0](./LICENSE).
 
 <!-- badge links -->
 
-[actions-workflow-lint]: https://github.com/actions-ecosystem/action-regex-match/actions?query=workflow%3ALint
-[actions-workflow-lint-badge]: https://img.shields.io/github/workflow/status/actions-ecosystem/action-regex-match/Lint?label=Lint&style=for-the-badge&logo=github
+[actions-workflow-test]: https://github.com/actions-ecosystem/action-regex-match/actions?query=workflow%3ATest
+[actions-workflow-test-badge]: https://img.shields.io/github/workflow/status/actions-ecosystem/action-regex-match/Test?label=Test&style=for-the-badge&logo=github
 
 [release]: https://github.com/actions-ecosystem/action-regex-match/releases
 [release-badge]: https://img.shields.io/github/v/release/actions-ecosystem/action-regex-match?style=for-the-badge&logo=github
