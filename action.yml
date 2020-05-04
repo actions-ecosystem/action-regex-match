@@ -1,0 +1,19 @@
+name: Actions Ecosystem Action Regex Match
+description: Match a input text with a input regex.
+author: Actions Ecosystem
+inputs:
+  text:
+    description: A text as the target for inputs.regex.
+    required: true
+  regex:
+    description: An extended regex for inputs.text.
+    required: true
+outputs:
+  match:
+    description: Whether inputs.regex matches inputs.text. The value is either 'true' or 'false'.
+runs:
+  using: docker
+  image: Dockerfile
+branding:
+  icon: search
+  color: yellow
