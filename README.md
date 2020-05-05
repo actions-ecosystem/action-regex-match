@@ -54,6 +54,7 @@ jobs:
           regex: '^/label\s*(.*?)\s*$'
 
       - uses: actions-ecosystem/action-add-labels@v1
+        if: ${{ steps.regex-match.outputs.match != '' }}
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           labels: ${{ steps.regex-match.outputs.group1 }}
@@ -69,13 +70,15 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
+
       - uses: actions-ecosystem/action-regex-match@v2
         id: regex-match
         with:
           text: ${{ github.event.comment.body }}
           regex: '```typescript([\s\S]*)```'
           flags: gm
-      - uses: ./.github/actions/action-create-comment
+
+      - uses: actions-ecosystem/action-create-comment@v1
         if: ${{ steps.regex-match.outputs.match != '' }}
         with:
           github_token: ${{ secrets.github_token }}
