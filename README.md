@@ -21,18 +21,18 @@ It would be more useful to use this with other GitHub Actions' outputs.
 
 ## Outputs
 
-|   NAME   |                                         DESCRIPTION                                         |   TYPE   |
-|----------|---------------------------------------------------------------------------------------------|----------|
-| `match`  | The whole matched text. If the input.regex doesn't match input.text, outputs.matched is ''. | `string` |
-| `group1` | The 1st captured group.                                                                     | `string` |
-| `group2` | The 2nd captured group.                                                                     | `string` |
-| `group3` | The 3rd captured group.                                                                     | `string` |
-| `group4` | The 4th captured group.                                                                     | `string` |
-| `group5` | The 5th captured group.                                                                     | `string` |
-| `group6` | The 6th captured group.                                                                     | `string` |
-| `group7` | The 7th captured group.                                                                     | `string` |
-| `group8` | The 8th captured group.                                                                     | `string` |
-| `group9` | The 9th captured group.                                                                     | `string` |
+|   NAME   |                                          DESCRIPTION                                          |   TYPE   |
+| -------- | --------------------------------------------------------------------------------------------- | -------- |
+| `match`  | The whole matched text. If the `input.regex` doesn't match `inputs.text`, this value is `''`. | `string` |
+| `group1` | The 1st captured group.                                                                       | `string` |
+| `group2` | The 2nd captured group.                                                                       | `string` |
+| `group3` | The 3rd captured group.                                                                       | `string` |
+| `group4` | The 4th captured group.                                                                       | `string` |
+| `group5` | The 5th captured group.                                                                       | `string` |
+| `group6` | The 6th captured group.                                                                       | `string` |
+| `group7` | The 7th captured group.                                                                       | `string` |
+| `group8` | The 8th captured group.                                                                       | `string` |
+| `group9` | The 9th captured group.                                                                       | `string` |
 
 ## Example
 
