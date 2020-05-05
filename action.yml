@@ -13,7 +13,7 @@ inputs:
     required: false
 outputs:
   match:
-    description: The whole matched text. If the input.regex doesn't match input.text, outputs.matched is ''.
+    description: The whole matched text. If the inputs.regex doesn't match inputs.text, this value is ''.
   group1:
     description: The 1st captured group.
   group2:
