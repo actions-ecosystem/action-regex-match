@@ -37,6 +37,29 @@ It would be more useful to use this with other GitHub Actions' outputs.
 ## Example
 
 ```yaml
+name: Add Label with Comment
+
+on: [issue_comment]
+
+jobs:
+  create_comment:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+
+      - uses: actions-ecosystem/action-regex-match@v2
+        id: regex-match
+        with:
+          text: ${{ github.event.comment.body }}
+          regex: '^/label\s*(.*?)\s*$'
+
+      - uses: actions-ecosystem/action-add-labels@v1
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          labels: ${{ steps.regex-match.outputs.group1 }}
+```
+
+```yaml
 name: Create Comment with Regex Match
 
 on: [issue_comment]
