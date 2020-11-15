@@ -1,24 +1,14 @@
+# https://docs.github.com/en/free-pro-team@latest/github/administering-a-repository/configuration-options-for-dependency-updates
+
 version: 2
 updates:
   - package-ecosystem: npm
     directory: "/"
     schedule:
-      interval: daily
+      interval: weekly
       time: "09:00"
-      timezone: Asia/Tokyo
     open-pull-requests-limit: 5
     labels:
       - dependencies
       - dependencies/dependabot
       - dependencies/npm
-  - package-ecosystem: github-actions
-    directory: "/"
-    schedule:
-      interval: daily
-      time: "09:00"
-      timezone: Asia/Tokyo
-    open-pull-requests-limit: 5
-    labels:
-      - dependencies
-      - dependencies/dependabot
-      - dependencies/github-actions
