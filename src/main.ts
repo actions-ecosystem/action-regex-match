@@ -11,9 +11,7 @@ async function run(): Promise<void> {
     const result = re.exec(text);
 
     if (result) {
-      for (const x of result) {
-        const index = result.indexOf(x);
-
+      for (const [index, x] of result.entries()) {
         if (index === 10) {
           return;
         }
