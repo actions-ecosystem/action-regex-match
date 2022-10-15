@@ -9,7 +9,11 @@ module.exports =
 
 var __createBinding = (this && this.__createBinding) || (Object.create ? (function(o, m, k, k2) {
     if (k2 === undefined) k2 = k;
-    Object.defineProperty(o, k2, { enumerable: true, get: function() { return m[k]; } });
+    var desc = Object.getOwnPropertyDescriptor(m, k);
+    if (!desc || ("get" in desc ? !m.__esModule : desc.writable || desc.configurable)) {
+      desc = { enumerable: true, get: function() { return m[k]; } };
+    }
+    Object.defineProperty(o, k2, desc);
 }) : (function(o, m, k, k2) {
     if (k2 === undefined) k2 = k;
     o[k2] = m[k];
@@ -26,43 +30,32 @@ var __importStar = (this && this.__importStar) || function (mod) {
     __setModuleDefault(result, mod);
     return result;
 };
-var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
-    function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
-    return new (P || (P = Promise))(function (resolve, reject) {
-        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
-        function rejected(value) { try { step(generator["throw"](value)); } catch (e) { reject(e); } }
-        function step(result) { result.done ? resolve(result.value) : adopt(result.value).then(fulfilled, rejected); }
-        step((generator = generator.apply(thisArg, _arguments || [])).next());
-    });
-};
 Object.defineProperty(exports, "__esModule", ({ value: true }));
 const core = __importStar(__webpack_require__(186));
-function run() {
-    return __awaiter(this, void 0, void 0, function* () {
-        try {
-            const text = core.getInput('text');
-            const regex = core.getInput('regex');
-            const flags = core.getInput('flags');
-            const re = new RegExp(regex, flags);
-            const result = re.exec(text);
-            if (result) {
-                for (const [index, x] of result.entries()) {
-                    if (index === 10) {
-                        return;
-                    }
-                    if (index === 0) {
-                        core.setOutput('match', x);
-                        continue;
-                    }
-                    core.setOutput(`group${index}`, x);
+async function run() {
+    try {
+        const text = core.getInput('text');
+        const regex = core.getInput('regex');
+        const flags = core.getInput('flags');
+        const re = new RegExp(regex, flags);
+        const result = re.exec(text);
+        if (result) {
+            for (const [index, x] of result.entries()) {
+                if (index === 10) {
+                    return;
                 }
+                if (index === 0) {
+                    core.setOutput('match', x);
+                    continue;
+                }
+                core.setOutput(`group${index}`, x);
             }
         }
-        catch (error) {
-            core.error(error);
-            core.setFailed(error.message);
-        }
-    });
+    }
+    catch (error) {
+        core.error(error);
+        core.setFailed(error.message);
+    }
 }
 run();
 
