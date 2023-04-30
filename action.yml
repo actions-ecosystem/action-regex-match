@@ -33,7 +33,7 @@ outputs:
   group9:
     description: The 9th captured group.
 runs:
-  using: node12
+  using: node16
   main: dist/index.js
 branding:
   icon: search

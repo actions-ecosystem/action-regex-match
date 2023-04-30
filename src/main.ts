@@ -24,7 +24,7 @@ async function run(): Promise<void> {
         core.setOutput(`group${index}`, x);
       }
     }
-  } catch (error) {
+  } catch (error: any) {
     core.error(error);
     core.setFailed(error.message);
   }
