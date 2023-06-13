@@ -1,6 +1,6 @@
 {
   "name": "action-regex-match",
-  "version": "2.0.2",
+  "version": "2.0.3",
   "private": true,
   "description": "Do regex matching",
   "main": "lib/main.js",
